@@ -1,0 +1,10 @@
+const express = require("express");
+const categoryCtrl = require("../controller/Categorycontroller.js");
+const router = express.Router();
+router.get("/viewCategory", categoryCtrl.listCategories);
+router.get("/categories/add", categoryCtrl.addCategoryPage);
+router.post("/categories/add", categoryCtrl.saveCategory);
+router.get("/categories/edit/:id", categoryCtrl.editCategoryPage);
+router.post("/categories/edit/:id", categoryCtrl.updateCategory);
+router.get("/categories/delete/:id", categoryCtrl.deleteCategory);
+module.exports = router;
